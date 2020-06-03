@@ -41,6 +41,7 @@ namespace TechJobsConsole
                     else
                     {
                         List<string> results = JobData.FindAll(columnChoice);
+                        results.Sort();
 
                         Console.WriteLine("\n*** All " + columnChoices[columnChoice] + " Values ***");
                         foreach (string item in results)
@@ -121,7 +122,7 @@ namespace TechJobsConsole
         {
             if (someJobs.Count == 0)
             {
-                Console.WriteLine("No results to display.");
+                Console.WriteLine("\nNo results to display.");
                 return;
             }
             foreach (Dictionary<string, string> job in someJobs)
@@ -131,6 +132,7 @@ namespace TechJobsConsole
                 {
                     Console.WriteLine(key + ": " + job[key]);
                 }
+                Console.WriteLine("*****\n");
             }
             
         }
