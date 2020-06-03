@@ -13,7 +13,9 @@ namespace TechJobsConsole
         public static List<Dictionary<string, string>> FindAll()
         {
             LoadData();
-            return AllJobs;
+            //INITIALLY, I TRIED COPYING ALLJOBS TO AN ARRAY USING THE COPYTO() METHOD, BUT THAT LED TO A COMPLETE REVISION OF EVERY METHOD IN THE PROGRAM.  I DON'T KNOW IF THE SOLUTION BELOW ACCOMPLISHES THE SAME PURPOSE FOR BONUS MISSION #2, BUT IT'S MY BEST ATTEMPT.
+            List<Dictionary<string, string>> allJobsCopy = new List<Dictionary<string, string>>(AllJobs);
+            return allJobsCopy;
         }
 
         /*
